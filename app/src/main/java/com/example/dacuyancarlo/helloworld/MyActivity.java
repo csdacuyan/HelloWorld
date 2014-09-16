@@ -4,6 +4,10 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class MyActivity extends Activity {
@@ -12,6 +16,25 @@ public class MyActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my);
+
+        final TextView textView = (TextView) findViewById(R.id.textView);
+        Button btnSend = (Button) findViewById(R.id.btnSend);
+        btnSend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                textView.setVisibility(View.INVISIBLE);
+                Toast.makeText(getApplicationContext(), "Message sent!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        Button btnRestore = (Button) findViewById(R.id.btnRestore);
+        btnRestore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                textView.setVisibility(View.VISIBLE);
+                Toast.makeText(getApplicationContext(), "Message restored!", Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
 
