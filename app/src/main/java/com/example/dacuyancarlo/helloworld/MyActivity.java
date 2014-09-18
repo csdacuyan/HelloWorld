@@ -18,6 +18,7 @@ public class MyActivity extends Activity {
         setContentView(R.layout.activity_my);
 
         final TextView textView = (TextView) findViewById(R.id.textView);
+
         Button btnSend = (Button) findViewById(R.id.btnSend);
         btnSend.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -32,11 +33,11 @@ public class MyActivity extends Activity {
             @Override
             public void onClick(View view) {
                 textView.setVisibility(View.VISIBLE);
-                Toast.makeText(getApplicationContext(), "Message restored!", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Message restoration is complete!", Toast.LENGTH_LONG).show();
             }
         });
-    }
 
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
